@@ -34,13 +34,12 @@ public class StopWatch extends AppCompatActivity {
     ArrayAdapter<String> adapter ;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.stopwatch);
 
         textView = (TextView)findViewById(R.id.textView);
         start = (Button)findViewById(R.id.button);
-        pause = (Button)findViewById(R.id.button2);
         reset = (Button)findViewById(R.id.button3);
         lap = (Button)findViewById(R.id.button4) ;
         listView = (ListView)findViewById(R.id.listview1);
@@ -59,28 +58,19 @@ public class StopWatch extends AppCompatActivity {
         start.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                StartTime = SystemClock.uptimeMillis();
-                handler.postDelayed(runnable, 0);
-
-                reset.setEnabled(false);
-
+                if(start.getText().equals("Start")){
+                    StartTime = SystemClock.uptimeMillis();
+                    handler.postDelayed(runnable, 0);
+                    reset.setEnabled(false);
+                    start.setText("Pause");
+                }else {
+                    TimeBuff += MillisecondTime;
+                    handler.removeCallbacks(runnable);
+                    reset.setEnabled(true);
+                    start.setText("Start");
+                }
             }
         });
-
-        pause.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                TimeBuff += MillisecondTime;
-
-                handler.removeCallbacks(runnable);
-
-                reset.setEnabled(true);
-
-            }
-        });
-
         reset.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

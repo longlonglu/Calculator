@@ -1,5 +1,4 @@
 package com.example.notbad;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -9,6 +8,8 @@ import android.widget.TextView;
 import java.util.EmptyStackException;
 import java.util.Stack;
 
+
+//power factorial
 
 public class Calculator extends AppCompatActivity {
 
@@ -31,32 +32,32 @@ public class Calculator extends AppCompatActivity {
     Button history;
     Button back;
     Button clean;
-    Button route;
+    Button sin;
+    Button cos;
+    Button tan;
+    Button factorial;
+    Button power;
+    Button negative;
+    Button pi;
+    Button left;
+    Button right;
     TextView input;
     String answer;
-    TextView historyTextView;
     String solution = "";
 
     protected void onCreate(Bundle savedInstanceState) {
+        System.out.println("hello world");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.calculator);
-        route = (Button) findViewById(R.id.vroute);
-        route.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Calculator.this,HCalculator.class);
-                startActivity(intent);
-            }
-        });
 
-        history = (Button) findViewById(R.id.vhistory);
-        history.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Calculator.this,History.class);
-                startActivity(intent);
-            }
-        });
+//        history = (Button) findViewById(R.id.vhistory);
+//        history.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(Calculator.this,History.class);
+//                startActivity(intent);
+//            }
+//        });
 
         input = (TextView) findViewById(R.id.vinput);
         num0 = (Button) findViewById(R.id.vnum0);
@@ -139,6 +140,78 @@ public class Calculator extends AppCompatActivity {
                 input.setText(input.getText() + "9");
             }
         });
+        power = (Button) findViewById(R.id.vpower);
+        power.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                solution = solution+"^";
+                input.setText(input.getText() + "^");
+            }
+        });
+        factorial = (Button) findViewById(R.id.vfactorial);
+        factorial.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                solution = solution+"!";
+                input.setText(input.getText() + "!");
+            }
+        });
+        negative = (Button) findViewById(R.id.vnegative);
+        negative.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                solution = solution+"_";
+                input.setText(input.getText() + "-");
+            }
+        });
+        pi = (Button) findViewById(R.id.vpi);
+        pi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                solution = solution+"1*#";
+                input.setText(input.getText() + "PI");
+            }
+        });
+        sin = (Button) findViewById(R.id.vsin);
+        sin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                solution = solution+"1*S";
+                input.setText(input.getText() + "sin(");
+            }
+        });
+        cos = (Button) findViewById(R.id.vcos);
+        cos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                solution = solution+"1*C";
+                input.setText(input.getText() + "cos(");
+            }
+        });
+        tan = (Button) findViewById(R.id.vtan);
+        tan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                solution = solution+"1*T";
+                input.setText(input.getText() + "tan(");
+            }
+        });
+        left = (Button) findViewById(R.id.left);
+        left.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                solution = solution+"(";
+                input.setText(input.getText() + "(");
+            }
+        });
+        right = (Button) findViewById(R.id.vright);
+        right.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                solution = solution+")";
+                input.setText(input.getText() + ")");
+            }
+        });
         plus = (Button) findViewById(R.id.vpuls);
         plus.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -150,10 +223,13 @@ public class Calculator extends AppCompatActivity {
                 if(temp.equals("-")){ return; }
                 if(temp.equals("*")){ return; }
                 if(temp.equals("/")){ return; }
-                else{
-                    solution = solution+"+";
-                    input.setText(input.getText() + " + ");
-                }
+                if(temp.equals("_")){ return; }
+                if(temp.equals("#")){ return; }
+                if(temp.equals("^")){ return; }
+                if(temp.equals("S")){ return; }
+                if(temp.equals("C")){ return; }
+                if(temp.equals("T")){ return; }
+                else{ solution = solution+"+"; input.setText(input.getText() + " + "); }
             }
         });
         subtraction = (Button) findViewById(R.id.vsubtraction);
@@ -167,10 +243,13 @@ public class Calculator extends AppCompatActivity {
                 if(temp.equals("-")){ return; }
                 if(temp.equals("*")){ return; }
                 if(temp.equals("/")){ return; }
-                else{
-                    solution = solution+"-";
-                    input.setText(input.getText() + " - ");
-                }
+                if(temp.equals("_")){ return; }
+                if(temp.equals("#")){ return; }
+                if(temp.equals("^")){ return; }
+                if(temp.equals("S")){ return; }
+                if(temp.equals("C")){ return; }
+                if(temp.equals("T")){ return; }
+                else{ solution = solution+"-"; input.setText(input.getText() + " - "); }
             }
         });
         multiplication = (Button) findViewById(R.id.vmultiplication);
@@ -184,10 +263,13 @@ public class Calculator extends AppCompatActivity {
                 if(temp.equals("-")){ return; }
                 if(temp.equals("*")){ return; }
                 if(temp.equals("/")){ return; }
-                else{
-                    solution = solution+"*";
-                    input.setText(input.getText() + " * ");
-                }
+                if(temp.equals("_")){ return; }
+                if(temp.equals("#")){ return; }
+                if(temp.equals("^")){ return; }
+                if(temp.equals("S")){ return; }
+                if(temp.equals("C")){ return; }
+                if(temp.equals("T")){ return; }
+                else{ solution = solution+"*"; input.setText(input.getText() + " * "); }
             }
         });
         divide = (Button) findViewById(R.id.vdivide);
@@ -201,10 +283,13 @@ public class Calculator extends AppCompatActivity {
                 if(temp.equals("-")){ return; }
                 if(temp.equals("*")){ return; }
                 if(temp.equals("/")){ return; }
-                else{
-                    solution = solution+"/";
-                    input.setText(input.getText() + " / ");
-                }
+                if(temp.equals("_")){ return; }
+                if(temp.equals("#")){ return; }
+                if(temp.equals("^")){ return; }
+                if(temp.equals("S")){ return; }
+                if(temp.equals("C")){ return; }
+                if(temp.equals("T")){ return; }
+                else{ solution = solution+"/"; input.setText(input.getText() + " / "); }
             }
         });
         dot = (Button) findViewById(R.id.vdot);
@@ -218,10 +303,13 @@ public class Calculator extends AppCompatActivity {
                 if(temp.equals("-")){ return; }
                 if(temp.equals("*")){ return; }
                 if(temp.equals("/")){ return; }
-                else{
-                    solution = solution+".";
-                    input.setText(input.getText() + " . ");
-                }
+                if(temp.equals("_")){ return; }
+                if(temp.equals("#")){ return; }
+                if(temp.equals("^")){ return; }
+                if(temp.equals("S")){ return; }
+                if(temp.equals("C")){ return; }
+                if(temp.equals("T")){ return; }
+                else{ solution = solution+"."; input.setText(input.getText() + "."); }
             }
         });
 
@@ -231,14 +319,8 @@ public class Calculator extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String s = input.getText() + "";
-                if(s.length() == 0){
-                    solution = "";
-                    return;
-                }
-                else{
-                    solution = "";
-                    input.setText("");
-                }
+                if(s.length() == 0){ solution = ""; return; }
+                else{ solution = ""; input.setText(""); }
             }
         });
 
@@ -246,18 +328,18 @@ public class Calculator extends AppCompatActivity {
         equal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(answer(solution) == 0.123456789){input.setText("Invalid Input"); solution = ""; return;}
                 input.setText(answer(solution) + "");
                 solution = answer(solution)+"";
             }
         });
+
         back = (Button) findViewById(R.id.vback);
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 answer = (String) input.getText();
-                if(answer.length() == 0){
-                    return;
-                }
+                if(answer.length() == 0){ return; }
                 answer = answer.substring(0,answer.length()-1);
                 solution = solution.substring(0,solution.length()-1);
                 input.setText(answer);
@@ -266,8 +348,8 @@ public class Calculator extends AppCompatActivity {
     }
 
     public double answer(String input){
-        if(input.length() <1) return -0.0000000000123456789;
-        double answer = 0;
+        if(input.length() <1) return 0.123456789;
+        double answer = 0.123456789;
         input = infixToPostfix(input);
         String[] temp = input.split(" ");
         Stack<Double> number = new Stack<>();
@@ -336,7 +418,7 @@ public class Calculator extends AppCompatActivity {
                 for(int j = value-1; j > 0; j--){
                     value = value * (value-j);
                 }
-                number.push((double)value);
+                number.push(value+0.0);
                 answer = value;
             }
 
@@ -377,7 +459,7 @@ public class Calculator extends AppCompatActivity {
                         number.push(answer);
                     }
                 }catch (EmptyStackException e){
-                    return -0.0000000000123456789;
+                    return 0.123456789;
                 }
                 catch (Exception e){}
             }
@@ -457,7 +539,5 @@ public class Calculator extends AppCompatActivity {
         }
         return -1;
     }
-
-
 
 }
