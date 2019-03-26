@@ -6,10 +6,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.util.EmptyStackException;
+import java.util.Stack;
+
 
 public class Calculator extends AppCompatActivity {
 
-    static String solution;
     Button num1;
     Button num2;
     Button num3;
@@ -33,6 +35,7 @@ public class Calculator extends AppCompatActivity {
     TextView input;
     String answer;
     TextView historyTextView;
+    String solution = "";
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -140,40 +143,85 @@ public class Calculator extends AppCompatActivity {
         plus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                solution = solution+ " +";
-                input.setText(input.getText() + "+");
+                if(solution.length() == 0){ return; }
+                String temp = solution.charAt(solution.length()-1) + "";
+                if(temp.equals(".")){ return; }
+                if(temp.equals("+")){ return; }
+                if(temp.equals("-")){ return; }
+                if(temp.equals("*")){ return; }
+                if(temp.equals("/")){ return; }
+                else{
+                    solution = solution+"+";
+                    input.setText(input.getText() + " + ");
+                }
             }
         });
         subtraction = (Button) findViewById(R.id.vsubtraction);
         subtraction.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                solution = solution+ " -";
-                input.setText(input.getText() + "-");
+                if(solution.length() == 0){ return; }
+                String temp = solution.charAt(solution.length()-1) + "";
+                if(temp.equals(".")){ return; }
+                if(temp.equals("+")){ return; }
+                if(temp.equals("-")){ return; }
+                if(temp.equals("*")){ return; }
+                if(temp.equals("/")){ return; }
+                else{
+                    solution = solution+"-";
+                    input.setText(input.getText() + " - ");
+                }
             }
         });
         multiplication = (Button) findViewById(R.id.vmultiplication);
         multiplication.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                solution = solution+" *";
-                input.setText(input.getText() + "*");
+                if(solution.length() == 0){ return; }
+                String temp = solution.charAt(solution.length()-1) + "";
+                if(temp.equals(".")){ return; }
+                if(temp.equals("+")){ return; }
+                if(temp.equals("-")){ return; }
+                if(temp.equals("*")){ return; }
+                if(temp.equals("/")){ return; }
+                else{
+                    solution = solution+"*";
+                    input.setText(input.getText() + " * ");
+                }
             }
         });
         divide = (Button) findViewById(R.id.vdivide);
         divide.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                solution = solution+" /";
-                input.setText(input.getText() + "/");
+                if(solution.length() == 0){ return; }
+                String temp = solution.charAt(solution.length()-1) + "";
+                if(temp.equals(".")){ return; }
+                if(temp.equals("+")){ return; }
+                if(temp.equals("-")){ return; }
+                if(temp.equals("*")){ return; }
+                if(temp.equals("/")){ return; }
+                else{
+                    solution = solution+"/";
+                    input.setText(input.getText() + " / ");
+                }
             }
         });
         dot = (Button) findViewById(R.id.vdot);
         dot.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                solution = solution+".";
-                input.setText(input.getText() + ".");
+                if(solution.length() == 0){ return; }
+                String temp = solution.charAt(solution.length()-1) + "";
+                if(temp.equals(".")){ return; }
+                if(temp.equals("+")){ return; }
+                if(temp.equals("-")){ return; }
+                if(temp.equals("*")){ return; }
+                if(temp.equals("/")){ return; }
+                else{
+                    solution = solution+".";
+                    input.setText(input.getText() + " . ");
+                }
             }
         });
 
@@ -184,9 +232,11 @@ public class Calculator extends AppCompatActivity {
             public void onClick(View v) {
                 String s = input.getText() + "";
                 if(s.length() == 0){
+                    solution = "";
                     return;
                 }
                 else{
+                    solution = "";
                     input.setText("");
                 }
             }
@@ -196,9 +246,8 @@ public class Calculator extends AppCompatActivity {
         equal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                historyTextView = (TextView) findViewById(R.id.histroyText);
-               historyTextView.append(input.getText() + "\n");
-
+                input.setText(answer(solution) + "");
+                solution = answer(solution)+"";
             }
         });
         back = (Button) findViewById(R.id.vback);
@@ -210,8 +259,205 @@ public class Calculator extends AppCompatActivity {
                     return;
                 }
                 answer = answer.substring(0,answer.length()-1);
+                solution = solution.substring(0,solution.length()-1);
                 input.setText(answer);
             }
         });
     }
+
+    public double answer(String input){
+        if(input.length() <1) return -0.0000000000123456789;
+        double answer = 0;
+        input = infixToPostfix(input);
+        String[] temp = input.split(" ");
+        Stack<Double> number = new Stack<>();
+        for(int i = 0; i < temp.length; i++){
+            if(isNumber(temp[i])){
+                double positive = Double.parseDouble(temp[i]);
+                number.push(positive);
+            }
+            else if(temp[i].equals("_#")){
+                number.push(-Math.PI);
+            }
+
+            else if(temp[i].equals("#")){
+                number.push(Math.PI);
+            }
+
+            else if(temp[i].contains("S")){
+                double value = 0;
+                if(temp[i].contains("#")){
+                    if(temp[i].contains("_")){
+                        value = - Math.PI;
+                    }
+                    else {
+                        value = Math.PI;
+                    }
+                }
+                else value = Double.parseDouble(temp[i].substring(1));
+                value = Math.sin(value);
+                number.push(value);
+            }
+
+            else if(temp[i].contains("C")){
+                double value = 0;
+                if(temp[i].contains("#")){
+                    if(temp[i].contains("_")){
+                        value = - Math.PI;
+                    }
+                    else {
+                        value = Math.PI;
+                    }
+                }
+                else value = Double.parseDouble(temp[i].substring(1));
+                value = Math.cos(value);
+                number.push(value);
+            }
+
+            else if(temp[i].contains("T")){
+                double value = 0;
+                if(temp[i].contains("#")){
+                    if(temp[i].contains("_")){
+                        value = - Math.PI;
+                    }
+                    else {
+                        value = Math.PI;
+                    }
+                }
+                else value = Double.parseDouble(temp[i].substring(1));
+                value = Math.tan(value);
+                number.push(value);
+            }
+
+            else if(temp[i].contains("!")){
+                String str = temp[i];
+                str = str.substring(0, str.length() - 1);
+                int value = Integer.parseInt(str);
+                for(int j = value-1; j > 0; j--){
+                    value = value * (value-j);
+                }
+                number.push((double)value);
+                answer = value;
+            }
+
+            else if(temp[i].contains("_")){
+                double negative = - Double.parseDouble(temp[i].substring(1));
+                number.push(negative);
+            }
+
+            else if(checkOperator(temp[i]) != -1 && !number.isEmpty()){
+                try {
+                    double second = number.pop();
+                    double first = number.pop();
+                    if(temp[i].equals("+")){
+                        answer = first + second;
+                        number.push(answer);
+                    }
+                    if(temp[i].equals("-")){
+                        answer = first - second;
+                        number.push(answer);
+                    }
+                    if(temp[i].equals("*")){
+                        answer = first * second;
+                        number.push(answer);
+                    }
+                    if(temp[i].equals("/")){
+                        answer = first / second;
+                        number.push(answer);
+                    }
+                    if(temp[i].equals("^")){
+                        answer = first;
+                        double tempValue = first;
+                        for(int j = 0; j < Math.abs(second)-1; j++){
+                            answer = answer * tempValue;
+                        }
+                        if(second < 0){
+                            answer = 1 / answer;
+                        }
+                        number.push(answer);
+                    }
+                }catch (EmptyStackException e){
+                    return -0.0000000000123456789;
+                }
+                catch (Exception e){}
+            }
+        }
+        return answer;
+    }
+
+    public String infixToPostfix(String input) {
+        String result = "";
+        Stack<String> stack = new Stack<>();
+        String[] temp = input.split("");
+
+        for (int i = 0; i<temp.length; i++) {
+            String c = temp[i];
+            //_ = negative, # - pi
+            if (isNumber(c) || isDot(c) || c.equals("_") || c.equals("#") || c.equals("C") || c.equals("S") || c.equals("T") || c.equals("!")){
+                result = result + c;
+            }
+
+            else if (c.equals("(")){
+                stack.push(c);
+                result = result + " ";
+            }
+
+            else if (c.equals(")")) {
+                result = result + " ";
+                while (!stack.isEmpty() && !stack.peek().equals("(") && !stack.peek().equals(")")){
+                    result = result + stack.pop();
+                }
+                if(!stack.isEmpty()){
+                    stack.pop();
+                }
+            }
+
+            else {
+                result = result + " ";
+                while (!stack.isEmpty() && checkOperator(c) <= checkOperator(stack.peek())){
+                    result = result + stack.pop() + " ";
+                }
+                stack.push(c);
+            }
+        }
+
+        while (!stack.isEmpty()){
+            result = result + " " + stack.pop();
+        }
+
+        return result;
+    }
+
+    public boolean isNumber(String s){
+        try{
+            Double.parseDouble(s);
+            return true;
+        }catch (NumberFormatException e){
+            return false;
+        }
+    }
+
+    public boolean isDot(String s){
+        if(s.equals(".")) return true;
+        else return false;
+    }
+
+    public int checkOperator(String s) {
+        switch (s) {
+            case "+":
+                return 1;
+            case "-":
+                return 1;
+            case "*":
+                return 2;
+            case "/":
+                return 2;
+            case  "^":
+                return 3;
+        }
+        return -1;
+    }
+
+
+
 }

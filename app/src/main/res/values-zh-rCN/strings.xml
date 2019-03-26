@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">NotBad</string>
+    <string name="action_settings" translatable="false">哈哈</string>
+    <string name="textView2">你好世界</string>
+</resources>
