@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:theme="@style/AppTheme.NoActionBar"
     android:background="#ECEFF1">
 
     <TextView
@@ -48,7 +48,7 @@
         android:layout_centerHorizontal="true" />
 
     <ListView
-        android:id="@+id/listview1"
+        android:id="@+id/stopwatchlistview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/button4"
