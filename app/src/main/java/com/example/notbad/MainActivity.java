@@ -11,7 +11,12 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.OutputStreamWriter;
+
 public class MainActivity extends AppCompatActivity {
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +24,12 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Button calculator;
         final Button stopWatch;
+
+        try {
+            OutputStreamWriter out = new OutputStreamWriter(openFileOutput("History.txt", MODE_PRIVATE));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
 
         calculator = (Button) findViewById(R.id.maincalculator);
         calculator.setOnClickListener(new View.OnClickListener() {

@@ -205,7 +205,8 @@
         app:layout_constraintBottom_toTopOf="@+id/vnum4"
         app:layout_constraintEnd_toStartOf="@+id/vnum8"
         app:layout_constraintStart_toEndOf="@+id/vnegative"
-        app:layout_constraintTop_toBottomOf="@+id/vsin" />
+        app:layout_constraintTop_toBottomOf="@+id/vsin"
+        app:layout_constraintVertical_bias="1.0" />
 
     <Button
         android:id="@+id/vnum8"

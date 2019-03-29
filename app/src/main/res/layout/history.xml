@@ -4,11 +4,6 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:theme="@style/Theme.AppCompat.Light">
-
-    <ScrollView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-
         <TextView
             android:id="@+id/histroyText"
             android:layout_width="match_parent"
@@ -20,18 +15,5 @@
             android:text="Coming Soon:"
             android:textAppearance="@android:style/TextAppearance.Material.Display1"
             android:textSize="32sp" />
-
-        <TextView
-            android:id="@+id/histroyTexttest"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="0dp"
-            android:layout_marginTop="200dp"
-            android:text="Coming Soon:"
-            android:textAppearance="@android:style/TextAppearance.Material.Display1"
-            android:textSize="32sp" />
-    </ScrollView>
 
 </RelativeLayout>

@@ -1,10 +1,17 @@
 package com.example.notbad;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
+import java.util.ArrayList;
 import java.util.EmptyStackException;
 import java.util.Stack;
 
@@ -13,9 +20,10 @@ import java.util.Stack;
 
 public class Calculator extends AppCompatActivity {
 
+    File tempFile;
     Button num1;
     Button num2;
-    Button num3;//iuouiou
+    Button num3;
     Button num4;
     Button num5;
     Button num6;
@@ -44,20 +52,21 @@ public class Calculator extends AppCompatActivity {
     TextView input;
     String answer;
     String solution = "";
+    BufferedWriter bufferedWriter;
 
     protected void onCreate(Bundle savedInstanceState) {
         System.out.println("hello world");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.calculator);
 
-//        history = (Button) findViewById(R.id.vhistory);
-//        history.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(Calculator.this,History.class);
-//                startActivity(intent);
-//            }
-//        });
+        history = (Button) findViewById(R.id.vhistory);
+        history.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Calculator.this,History.class);
+                startActivity(intent);
+            }
+        });
 
         input = (TextView) findViewById(R.id.vinput);
         num0 = (Button) findViewById(R.id.vnum0);
@@ -324,13 +333,35 @@ public class Calculator extends AppCompatActivity {
             }
         });
 
+
         equal = (Button) findViewById(R.id.vequal);
         equal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String s = answer(solution) + "";
                 if(answer(solution) == 0.123456789){input.setText("Invalid Input"); solution = ""; return;}
-                input.setText(answer(solution) + "");
-                solution = answer(solution)+"";
+//                File cDir = getBaseContext().getCacheDir();
+//                tempFile = new File(cDir.getPath() + "/" + "History.txt") ;
+//                FileWriter writer=null;
+//                try {
+//                    writer = new FileWriter(tempFile);
+//                    writer.write(input.getText() + " = " + s +"\n");
+//                    writer.close();
+//
+//                } catch (IOException e) {
+//                    e.printStackTrace();
+//                }
+
+//
+                try {
+                    OutputStreamWriter out = new OutputStreamWriter(openFileOutput("History.txt", MODE_PRIVATE |MODE_APPEND));
+                    out.write(input.getText() + " = " + s +"\n");
+                    out.close();
+
+                }
+                catch (Throwable t) { }
+                input.setText(s);
+                solution = s+"";
             }
         });
 
