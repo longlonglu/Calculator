@@ -9,342 +9,413 @@
 
     <Button
         android:id="@+id/vback"
-        android:layout_width="72dp"
-        android:layout_height="72dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:background="?android:attr/colorBackground"
         android:text="B"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/vfactorial"
-        app:layout_constraintStart_toEndOf="@+id/vmultiplication" />
+        app:layout_constraintBottom_toTopOf="@+id/vhistory"
+        app:layout_constraintEnd_toEndOf="@+id/vright"
+        app:layout_constraintStart_toEndOf="@+id/vpuls"
+        app:layout_constraintTop_toBottomOf="@+id/vsin" />
 
     <Button
         android:id="@+id/vtan"
         style="?android:textAppearanceSmall"
-        android:layout_width="72dp"
-        android:layout_height="72dp"
+        android:layout_width="0dp"
+        android:layout_height="22dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginBottom="36dp"
         android:background="?android:attr/colorBackground"
         android:text="Tan"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/vright"
-        app:layout_constraintStart_toEndOf="@+id/vcos" />
+        app:layout_constraintBottom_toTopOf="@+id/vnum7"
+        app:layout_constraintEnd_toStartOf="@+id/vsin"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/vcos" />
 
     <Button
         android:id="@+id/vpower"
         style="?android:textAppearanceSmall"
-        android:layout_width="72dp"
-        android:layout_height="72dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:background="?android:attr/colorBackground"
         android:text="^"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/vequal"
-        app:layout_constraintStart_toEndOf="@+id/vpuls" />
+        app:layout_constraintBottom_toTopOf="@+id/vmultiplication"
+        app:layout_constraintEnd_toStartOf="@+id/vnum1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/vsubtraction" />
 
     <Button
         android:id="@+id/vclean"
-        android:layout_width="72dp"
-        android:layout_height="72dp"
+        android:layout_width="0dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="110dp"
+        android:layout_marginEnd="19dp"
+        android:layout_marginBottom="110dp"
         android:background="?android:attr/colorBackground"
         android:text="C"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/vnum7"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintBottom_toBottomOf="@+id/vright"
+        app:layout_constraintEnd_toStartOf="@+id/vhistory"
+        app:layout_constraintStart_toEndOf="@+id/vcos"
+        app:layout_constraintTop_toTopOf="@+id/vinput" />
 
     <Button
         android:id="@+id/vequal"
         style="?android:textAppearanceSmall"
-        android:layout_width="144dp"
-        android:layout_height="72dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:layout_alignParentStart="true"
         android:background="?android:attr/colorBackground"
         android:text="="
         android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/vdot" />
+        app:layout_constraintBottom_toTopOf="@+id/vdivide"
+        app:layout_constraintEnd_toEndOf="@+id/vnum3"
+        app:layout_constraintStart_toEndOf="@+id/vnum0"
+        app:layout_constraintTop_toBottomOf="@+id/vpi" />
 
     <Button
         android:id="@+id/vdivide"
         style="?android:textAppearanceSmall"
-        android:layout_width="72dp"
-        android:layout_height="72dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:background="?android:attr/colorBackground"
         android:text="/"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/vmultiplication"
-        app:layout_constraintStart_toEndOf="@+id/vright" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/vmultiplication"
+        app:layout_constraintStart_toEndOf="@+id/vequal"
+        app:layout_constraintTop_toBottomOf="@+id/vequal" />
 
     <Button
         android:id="@+id/vdot"
         style="?android:textAppearanceSmall"
-        android:layout_width="72dp"
-        android:layout_height="72dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="50dp"
         android:background="?android:attr/colorBackground"
         android:text="."
         android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/vnum0" />
+        app:layout_constraintBottom_toTopOf="@+id/vpi"
+        app:layout_constraintEnd_toStartOf="@+id/vnum0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/vnum3" />
 
 
     <Button
         android:id="@+id/vpi"
         style="?android:textAppearanceSmall"
-        android:layout_width="72dp"
-        android:layout_height="72dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="50dp"
         android:background="?android:attr/colorBackground"
         android:text="PI"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/vdivide"
-        app:layout_constraintStart_toEndOf="@+id/vtan" />
+        app:layout_constraintBottom_toTopOf="@+id/vequal"
+        app:layout_constraintEnd_toStartOf="@+id/vnum0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/vdot" />
 
     <Button
         android:id="@+id/vnum1"
         style="?android:textAppearanceSmall"
-        android:layout_width="72dp"
-        android:layout_height="72dp"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="100dp"
         android:background="?android:attr/colorBackground"
         android:text="1"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/vnegative"
+        app:layout_constraintBaseline_toBaselineOf="@+id/vnum2"
+        app:layout_constraintEnd_toStartOf="@+id/vmultiplication"
+        app:layout_constraintStart_toEndOf="@+id/vpower"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/vnum2"
         style="?android:textAppearanceSmall"
-        android:layout_width="72dp"
-        android:layout_height="72dp"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
+        android:layout_marginTop="119dp"
+        android:layout_marginEnd="210dp"
+        android:layout_marginBottom="119dp"
         android:background="?android:attr/colorBackground"
         android:text="2"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/vnum0"
-        app:layout_constraintStart_toEndOf="@+id/vnum1" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/vnum1"
+        app:layout_constraintTop_toTopOf="@+id/vright" />
 
     <Button
         android:id="@+id/vnum4"
         style="?android:textAppearanceSmall"
-        android:layout_width="72dp"
-        android:layout_height="72dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="50dp"
         android:background="?android:attr/colorBackground"
         android:text="4"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/vnum1"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintBottom_toTopOf="@+id/vfactorial"
+        app:layout_constraintEnd_toStartOf="@+id/vnum9"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/vnum9" />
 
     <Button
         android:id="@+id/vnum5"
         style="?android:textAppearanceSmall"
-        android:layout_width="72dp"
-        android:layout_height="72dp"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
         android:background="?android:attr/colorBackground"
         android:text="5"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/vnum2"
-        app:layout_constraintStart_toEndOf="@+id/vnum4" />
+        app:layout_constraintBaseline_toBaselineOf="@+id/vnum4"
+        app:layout_constraintEnd_toStartOf="@+id/vnum6"
+        app:layout_constraintStart_toEndOf="@+id/vfactorial" />
 
     <Button
         android:id="@+id/vnum6"
         style="?android:textAppearanceSmall"
-        android:layout_width="72dp"
-        android:layout_height="72dp"
+        android:layout_width="0dp"
+        android:layout_height="26dp"
+        android:layout_marginEnd="160dp"
         android:background="?android:attr/colorBackground"
         android:text="6"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/vnum3"
-        app:layout_constraintStart_toEndOf="@+id/vnum5" />
+        app:layout_constraintBottom_toBottomOf="@+id/vnum5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/vnum5"
+        app:layout_constraintTop_toBottomOf="@+id/vnum5" />
 
     <Button
         android:id="@+id/vnum7"
         style="?android:textAppearanceSmall"
-        android:layout_width="72dp"
-        android:layout_height="72dp"
+        android:layout_width="0dp"
+        android:layout_height="23dp"
+        android:layout_marginTop="57dp"
+        android:layout_marginBottom="57dp"
         android:background="?android:attr/colorBackground"
         android:text="7"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/vnum4"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toStartOf="@+id/vnum8"
+        app:layout_constraintStart_toEndOf="@+id/vnegative"
+        app:layout_constraintTop_toBottomOf="@+id/vsin" />
 
     <Button
         android:id="@+id/vnum8"
         style="?android:textAppearanceSmall"
-        android:layout_width="72dp"
-        android:layout_height="72dp"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="110dp"
         android:background="?android:attr/colorBackground"
         android:text="8"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/vnum5"
+        app:layout_constraintBaseline_toBaselineOf="@+id/vnum7"
+        app:layout_constraintEnd_toStartOf="@+id/vright"
         app:layout_constraintStart_toEndOf="@+id/vnum7" />
 
     <Button
         android:id="@+id/vnum9"
         style="?android:textAppearanceSmall"
-        android:layout_width="72dp"
-        android:layout_height="72dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="160dp"
         android:background="?android:attr/colorBackground"
         android:text="9"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/vnum6"
-        app:layout_constraintStart_toEndOf="@+id/vnum8" />
+        app:layout_constraintBottom_toTopOf="@+id/vnum4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/vnum4"
+        app:layout_constraintTop_toBottomOf="@+id/vright" />
 
     <Button
         android:id="@+id/vsin"
         style="?android:textAppearanceSmall"
-        android:layout_width="72dp"
-        android:layout_height="72dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:background="?android:attr/colorBackground"
         android:text="Sin"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/vclean"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintBottom_toTopOf="@+id/vback"
+        app:layout_constraintEnd_toStartOf="@+id/vcos"
+        app:layout_constraintStart_toEndOf="@+id/vtan"
+        app:layout_constraintTop_toBottomOf="@+id/vinput" />
 
     <Button
         android:id="@+id/vcos"
         style="?android:textAppearanceSmall"
-        android:layout_width="72dp"
-        android:layout_height="72dp"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="36dp"
         android:background="?android:attr/colorBackground"
         android:text="Cos"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/left"
+        app:layout_constraintBaseline_toBaselineOf="@+id/vsin"
+        app:layout_constraintEnd_toStartOf="@+id/vclean"
         app:layout_constraintStart_toEndOf="@+id/vsin" />
 
     <Button
         android:id="@+id/left"
         style="?android:textAppearanceSmall"
-        android:layout_width="72dp"
-        android:layout_height="72dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="150dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginBottom="21dp"
         android:background="?android:attr/colorBackground"
         android:text="("
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/vnum8"
-        app:layout_constraintStart_toEndOf="@+id/vclean" />
+        app:layout_constraintBottom_toTopOf="@+id/vnegative"
+        app:layout_constraintEnd_toStartOf="@+id/vhistory"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/vhistory" />
 
     <Button
         android:id="@+id/vright"
         style="?android:textAppearanceSmall"
-        android:layout_width="72dp"
-        android:layout_height="72dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="45dp"
         android:background="?android:attr/colorBackground"
         android:text=")"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/vnum9"
-        app:layout_constraintStart_toEndOf="@+id/left" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/vpuls"
+        app:layout_constraintTop_toBottomOf="@+id/vnegative" />
 
     <Button
         android:id="@+id/vpuls"
         style="?android:textAppearanceSmall"
-        android:layout_width="72dp"
-        android:layout_height="72dp"
+        android:layout_width="0dp"
+        android:layout_height="23dp"
+        android:layout_marginStart="200dp"
+        android:layout_marginEnd="10dp"
         android:background="?android:attr/colorBackground"
         android:text="+"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/vequal"
-        app:layout_constraintStart_toEndOf="@+id/vnum3" />
+        app:layout_constraintBottom_toBottomOf="@+id/vright"
+        app:layout_constraintEnd_toStartOf="@+id/vright"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/vright" />
 
     <Button
         android:id="@+id/vnum0"
         style="?android:textAppearanceSmall"
-        android:layout_width="72dp"
-        android:layout_height="72dp"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
+        android:layout_marginEnd="210dp"
         android:background="?android:attr/colorBackground"
         android:text="0"
         android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/vnegative" />
+        app:layout_constraintBaseline_toBaselineOf="@+id/vdot"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/vnum3"
+        app:layout_constraintStart_toEndOf="@+id/vdot" />
 
     <Button
         android:id="@+id/vsubtraction"
         style="?android:textAppearanceSmall"
-        android:layout_width="72dp"
-        android:layout_height="72dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:background="?android:attr/colorBackground"
         android:text="-"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/vpuls"
-        app:layout_constraintStart_toEndOf="@+id/vnum6" />
+        app:layout_constraintBottom_toTopOf="@+id/vpower"
+        app:layout_constraintEnd_toEndOf="@+id/vmultiplication"
+        app:layout_constraintStart_toEndOf="@+id/vnum6"
+        app:layout_constraintTop_toBottomOf="@+id/vfactorial" />
 
     <Button
         android:id="@+id/vmultiplication"
         style="?android:textAppearanceSmall"
-        android:layout_width="72dp"
-        android:layout_height="72dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="110dp"
+        android:layout_marginBottom="5dp"
         android:background="?android:attr/colorBackground"
         android:text="*"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/vsubtraction"
-        app:layout_constraintStart_toEndOf="@+id/vnum9" />
+        app:layout_constraintBottom_toTopOf="@+id/vnum3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/vnum1"
+        app:layout_constraintTop_toBottomOf="@+id/vpower" />
 
     <Button
         android:id="@+id/vnegative"
         style="?android:textAppearanceSmall"
-        android:layout_width="72dp"
-        android:layout_height="72dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:background="?android:attr/colorBackground"
         android:text="(-)"
         android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintBottom_toTopOf="@+id/vright"
+        app:layout_constraintEnd_toStartOf="@+id/vnum7"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/left" />
 
     <Button
         android:id="@+id/vfactorial"
         style="?android:textAppearanceSmall"
-        android:layout_width="72dp"
-        android:layout_height="72dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="24dp"
         android:background="?android:attr/colorBackground"
         android:text="!"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/vpower"
-        app:layout_constraintStart_toEndOf="@+id/vsubtraction" />
+        app:layout_constraintBottom_toTopOf="@+id/vsubtraction"
+        app:layout_constraintEnd_toStartOf="@+id/vnum5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/vnum4" />
 
     <TextView
         android:id="@+id/vinput"
         android:layout_width="0dp"
-        android:layout_height="170dp"
-        android:layout_marginBottom="32dp"
+        android:layout_height="73dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginBottom="41dp"
         android:background="?android:attr/colorBackground"
         android:textAppearance="@android:style/TextAppearance.Material.Display1"
         android:textSize="32dp"
-        app:layout_constraintBottom_toTopOf="@+id/vtan"
+        app:layout_constraintBottom_toTopOf="@+id/vsin"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/vhistory"
-        android:layout_width="72dp"
-        android:layout_height="72dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="35dp"
         android:background="?android:attr/colorBackground"
         android:text="History"
-        app:layout_constraintBottom_toTopOf="@+id/vback"
-        app:layout_constraintStart_toEndOf="@+id/vdivide" />
+        app:layout_constraintBottom_toTopOf="@+id/left"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/left"
+        app:layout_constraintTop_toBottomOf="@+id/vback" />
 
     <Button
         android:id="@+id/vnum3"
         style="?android:textAppearanceSmall"
-        android:layout_width="72dp"
-        android:layout_height="72dp"
+        android:layout_width="50dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="160dp"
         android:background="?android:attr/colorBackground"
         android:text="3"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/vdot"
-        app:layout_constraintStart_toEndOf="@+id/vnum2" />
-
-    <Button
-        android:id="@+id/ve"
-        style="?android:textAppearanceSmall"
-        android:layout_width="72dp"
-        android:layout_height="72dp"
-        android:background="?android:attr/colorBackground"
-        android:text="E"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/vhistory"
-        app:layout_constraintStart_toEndOf="@+id/vpi" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/vnum0"
+        app:layout_constraintTop_toBottomOf="@+id/vmultiplication" />
 
 
 </android.support.constraint.ConstraintLayout>
