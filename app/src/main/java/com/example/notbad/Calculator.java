@@ -15,7 +15,7 @@ public class Calculator extends AppCompatActivity {
 
     Button num1;
     Button num2;
-    Button num3;
+    Button num3;//iuouiou
     Button num4;
     Button num5;
     Button num6;
