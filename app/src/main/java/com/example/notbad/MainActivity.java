@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Button calculator;
+        Button calculator, converter;
         final Button stopWatch;
 
         try {
@@ -37,6 +37,14 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, Calculator.class);
                 startActivity(intent);
+            }
+        });
+
+        converter = (Button) findViewById(R.id.converter);
+        converter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), Converter.class));
             }
         });
 

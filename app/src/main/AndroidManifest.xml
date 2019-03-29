@@ -20,7 +20,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".Calculator"></activity>
-        <activity android:name=".HCalculator"></activity>
+        <activity android:name=".Converter"></activity>
         <activity android:name=".History"></activity>
         <activity android:name=".StopWatch"></activity>
     </application>
