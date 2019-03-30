@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
         SectionsPageAdapter adapter = new SectionsPageAdapter(getSupportFragmentManager());
         adapter.addFragment(new Calculator(), "Calculator");
         adapter.addFragment(new StopWatch(), "Stop Watch");
+        adapter.addFragment(new Converter(),"Converter");
         viewPager.setAdapter(adapter);
         viewPager.setBackgroundColor(960000);
     }
