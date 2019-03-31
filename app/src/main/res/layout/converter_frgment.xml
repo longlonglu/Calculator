@@ -3,84 +3,88 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:layout_editor_absoluteY="81dp">
 
     <Button
-        android:id="@+id/CDistance"
+        android:id="@+id/CLength"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="1dp"
-        android:layout_marginTop="30dp"
-        android:text="Distance"
-        app:layout_constraintBottom_toTopOf="@+id/CWeight"
-        app:layout_constraintStart_toStartOf="@+id/CWeight"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_chainStyle="packed" />
+        android:layout_marginStart="7dp"
+        android:layout_marginTop="96dp"
+        android:text="Length"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/CWeight"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="1dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="13dp"
         android:text="Weight"
-        app:layout_constraintBottom_toTopOf="@+id/button8"
-        app:layout_constraintStart_toStartOf="@+id/button8"
-        app:layout_constraintTop_toBottomOf="@+id/CDistance" />
+        app:layout_constraintStart_toStartOf="@+id/CTemperature"
+        app:layout_constraintTop_toBottomOf="@+id/CLength" />
 
     <Button
-        android:id="@+id/button8"
+        android:id="@+id/CTemperature"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="14dp"
-        android:text="Button"
-        app:layout_constraintBottom_toTopOf="@+id/button9"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/CWeight" />
-
-    <Button
-        android:id="@+id/button9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="2dp"
-        android:text="Button"
-        app:layout_constraintBottom_toTopOf="@+id/button10"
-        app:layout_constraintStart_toStartOf="@+id/button8"
-        app:layout_constraintTop_toBottomOf="@+id/button8" />
-
-    <Button
-        android:id="@+id/button10"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Button"
-        app:layout_constraintBottom_toTopOf="@+id/button11"
-        app:layout_constraintStart_toStartOf="@+id/button9"
-        app:layout_constraintTop_toBottomOf="@+id/button9" />
-
-    <Button
-        android:id="@+id/button11"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Button"
-        app:layout_constraintBottom_toTopOf="@+id/button12"
-        app:layout_constraintStart_toStartOf="@+id/button10"
-        app:layout_constraintTop_toBottomOf="@+id/button10" />
-
-    <Button
-        android:id="@+id/button12"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="7dp"
-        android:text="Button"
-        app:layout_constraintBottom_toTopOf="@+id/button13"
-        app:layout_constraintStart_toStartOf="@+id/button11"
-        app:layout_constraintTop_toBottomOf="@+id/button11" />
-
-    <Button
-        android:id="@+id/button13"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Button"
+        android:layout_marginEnd="31dp"
+        android:text="Temperature"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/button12"
-        app:layout_constraintTop_toBottomOf="@+id/button12" />
+        app:layout_constraintEnd_toStartOf="@+id/CTime"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/CSpeed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="59dp"
+        android:layout_marginTop="35dp"
+        android:text="Speed"
+        app:layout_constraintEnd_toEndOf="@+id/CTime"
+        app:layout_constraintTop_toBottomOf="@+id/CTime" />
+
+    <Button
+        android:id="@+id/CTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="41dp"
+        android:text="Time"
+        app:layout_constraintEnd_toEndOf="@+id/CEnergy"
+        app:layout_constraintStart_toStartOf="@+id/CEnergy"
+        app:layout_constraintTop_toTopOf="@+id/CTemperature" />
+
+    <Button
+        android:id="@+id/CEnergy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="9dp"
+        android:layout_marginTop="35dp"
+        android:text="Energy"
+        app:layout_constraintStart_toEndOf="@+id/CForce"
+        app:layout_constraintTop_toBottomOf="@+id/CForce" />
+
+    <Button
+        android:id="@+id/CForce"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="35dp"
+        android:layout_marginStart="35dp"
+        android:text="Force"
+        app:layout_constraintBottom_toBottomOf="@+id/CLength"
+        app:layout_constraintStart_toEndOf="@+id/CLength" />
+
+    <Button
+        android:id="@+id/CSound"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="140dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="8dp"
+        android:text="Sound"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/CTemperature" />
 </android.support.constraint.ConstraintLayout>

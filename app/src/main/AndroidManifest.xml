@@ -21,6 +21,14 @@
         </activity>
         <activity android:name=".History"></activity>
         <activity android:name=".Distance"></activity>
+        <activity android:name=".Weight"></activity>
+        <activity android:name=".Time"></activity>
+        <activity android:name=".Temperature"></activity>
+        <activity android:name=".Speed"></activity>
+        <activity android:name=".Sound"></activity>
+        <activity android:name=".Energy"></activity>
+        <activity android:name=".Force"></activity>
+
     </application>
 
 </manifest>
